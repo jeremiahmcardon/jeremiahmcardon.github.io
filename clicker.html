@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html style="margin-left: 100px; margin-right: 100px; margin-top: 50px;">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>CurtClicker</title>
+        <style>
+            img{width:500px;}
+            p{font-size:50px;}
+            div{text-align: center;}
+            body{background-color: cornflowerblue;}
+            #pellets{background-color: white;}
+        </style>
+    </head>
+    <body>
+        <div id="scoreBar">
+            <img id="image" src="https://shorturl.at/hdbY0"></img>
+            <p id="pellets">Pellets In Curt's Head: _</p>
+        </div>
+        <div id="upgradeBar">
+            <button onclick="buyCursor()">Cursor [<span id="cursorCost">25</span>] -- <span id="cursors">0</span></button>
+            <button onclick="marryAMurderousWife()">Murderous Wives [<span id="murderousWifeCost">175</span>] -- <span id="murderousWives">0</span></button>
+        </div>
+    </body>
+</html>
+<script>
+    document.getElementById("image").addEventListener("click",up)
+    var score = 0
+    var cursorCost = 25
+    var cursors = 1
+    var murderousWifeCost = 175
+    var murderousWives = 0
+    function up(){
+        score = score + cursors
+        document.getElementById("pellets").innerHTML = "Pellets In Curt's Head: " + score
+        console.log(score)
+    }
+    function buyCursor(){
+        if(score >= cursorCost){
+            score = score - cursorCost;
+            cursors = cursors + 1;
+            cursorCost = Math.round(cursorCost +1.15);
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("cursorCost").innerHTML = cursorCost;
+            document.getElementById("cursors").innerHTML = cursors;
+        }
+    }
+</script>
