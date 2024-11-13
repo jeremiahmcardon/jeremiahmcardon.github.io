@@ -9,40 +9,39 @@
             p{font-size:50px;}
             div{text-align: center;}
             body{background-color: cornflowerblue;}
-            #pellets{background-color: white;}
+            #score{background-color: white;}
         </style>
     </head>
     <body>
         <div id="scoreBar">
             <img id="image" src="https://shorturl.at/hdbY0"></img>
-            <p id="pellets">Pellets In Curt's Head: _</p>
-        </div>
-        <div id="upgradeBar">
-            <button onclick="buyCursor()">Cursor [<span id="cursorCost">25</span>] -- <span id="cursors">0</span></button>
-            <button onclick="marryAMurderousWife()">Murderous Wives [<span id="murderousWifeCost">175</span>] -- <span id="murderousWives">0</span></button>
+            <p id="score">Thoughts Not In Curt's Head: _</p>
+            <button id="upgradeButt">Upgrade Cost: 25</button>
         </div>
     </body>
 </html>
 <script>
     document.getElementById("image").addEventListener("click",up)
+    document.getElementById("upgradeButt").addEventListener("click",upgrade)
     var score = 0
-    var cursorCost = 25
-    var cursors = 1
-    var murderousWifeCost = 175
-    var murderousWives = 0
+    var click = 1
+    var cost = 25
     function up(){
-        score = score + cursors
-        document.getElementById("pellets").innerHTML = "Pellets In Curt's Head: " + score
+        score = score + click
+        document.getElementById("score").innerHTML = "Thoughts Not In Curt's Head: " + score
         console.log(score)
     }
-    function buyCursor(){
-        if(score >= cursorCost){
-            score = score - cursorCost;
-            cursors = cursors + 1;
-            cursorCost = Math.round(cursorCost +1.15);
-            document.getElementById("score").innerHTML = score;
-            document.getElementById("cursorCost").innerHTML = cursorCost;
-            document.getElementById("cursors").innerHTML = cursors;
-        }
+    function upgrade(){
+     if(score >= cost){
+     click = click*2  
+       score = score - cost
+       cost = cost * 3
+       document.getElementById("score").innerHTML = "Thoughts Not In Curt's Head: " + score
+       document.getElementById("upgradeButt").innerHTML = "Upgrade Cost:" + cost
+     }
+     else{
+     alert("You Stupid Dumby Dumb Dumb, You Don't Have Enough Points")   
+     }
     }
+
 </script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <img id="cat" src="https://shorturl.at/0j22l">
+        <p id="paragraph">Paragraph Tag</p>
+        <img id="pat" src="https://m.media-amazon.com/images/I/618NHL5x+5L._AC_SY300_SX300_.jpg">
+        <p id="goUp">1</p>
+    </body>
+    <script>
+        function catMessage() {
+            alert("cat")
+        }
+        document.getElementById("cat").addEventListener("click", catMessage)
+        function colorChange() {
+            document.getElementById("paragraph").style.color = "red"
+        }
+        document.getElementById("paragraph").addEventListener("click", colorChange)
+        function bigPat() {
+            document.getElementById("pat").style.width = "1000px"
+        }
+        document.getElementById("pat").addEventListener("mouseover", bigPat)
+        document.getElementById("goUp").addEventListener("click",upClick)
+        var score = 0
+        function upClick() {
+            score = score + 1
+            document.getElementById("goUp").innerHTML = score
+            console.log(score)
+        }
+    </script>
+</html>
