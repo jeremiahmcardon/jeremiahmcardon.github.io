@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #box {
+                width: 30px;
+                height: 30px;
+                background-color: red;
+                position: absolute;
+                top: 100px;
+                left: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="box">
+
+        </div>
+    </body>
+    <script>
+        var leftVariable = 5;
+        function moveBox (){
+            leftVariable = leftVariable + 5;
+            document.getElementById("box").style.left = 100 + leftVariable + "px" 
+        }
+        document.getElementById("box").addEventListener("click",moveBox)
+        setInterval(moveBox,100)
+    </script>
+</html>
