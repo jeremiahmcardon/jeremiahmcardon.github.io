@@ -19,11 +19,24 @@
     </body>
     <script>
         var leftVariable = 5;
-        function moveBox (){
-            leftVariable = leftVariable + 5;
-            document.getElementById("box").style.left = 100 + leftVariable + "px" 
-        }
+        var leftSpeed = 15;
         document.getElementById("box").addEventListener("click",moveBox)
-        setInterval(moveBox,100)
+        setInterval(moveBox,16)
+        function moveBox (){
+            leftVariable = leftVariable + leftSpeed;
+            document.getElementById("box").style.left = 100 + leftVariable + "px"
+            if(leftVariable >= 1500){leftSpeed= -5}
+            if(leftVariable === 0){leftSpeed = 5}
+        }
+        var upVariable = 5;
+        var upSpeed = 10;
+        document.getElementById("box").addEventListener("click",moveBox)
+        setInterval(moveBoxUp,16)
+        function moveBoxUp (){
+            upVariable = upVariable + upSpeed;
+            document.getElementById("box").style.top = 100 + upVariable + "px"
+            if(upVariable >= 500){upSpeed = -5}
+            if(upVariable === 0){upSpeed = 5}
+        }
     </script>
 </html>
